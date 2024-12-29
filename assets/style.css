@@ -1,0 +1,10 @@
+
+
+.messagebox {
+    margin: auto;
+    position:relative;
+    top:15vh;
+    max-width: 800px;
+    min-height: 475px;
+    background-color: #2C001E;
+}
