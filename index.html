@@ -1,9 +1,17 @@
-<h1>
-    hello world
-</h1>
+<!-- Boilerplate html file - you shouldn't need to edit this, but every path needs one -->
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // Load header
+        $(function(){
+            $("head").load("/_boilerplate/head.html");
+        });
+    </script>
+    <!-- Anything after the jquery load will be overwritten by the load() call -->
+  </head>
 
-<div class="msgbox">
-    <div class="msg">
-        test
-    </div>
-</div>
+  <body>
+     <div id="content"></div>
+  </body>
+</html>

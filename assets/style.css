@@ -1,10 +1,73 @@
 
+:root {
+    --msgbox-width: 800px;
+}
 
-.messagebox {
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(+200vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+body {
+    background: url("/assets/images/bomb.png") center left repeat;
+    margin: 10px;
+}
+
+#msgheader {
     margin: auto;
-    position:relative;
-    top:15vh;
-    max-width: 800px;
-    min-height: 475px;
-    background-color: #2C001E;
+    max-width: var(--msgbox-width);
+    background-color: #eeeeee;
+}
+
+#msgbox {
+    margin: auto;
+    max-width: var(--msgbox-width);
+    min-height: 8rem;
+    max-height: 90vh;
+    background-color: #7f92b9;
+    overflow-y: scroll;
+    z-index: 10;
+}
+
+.msg {
+    display: grid;
+    padding-bottom: 10px;
+    grid-template-columns: auto 1fr;
+    animation: 0.75s ease 0s 1 slideInFromTop;
+}
+
+.msg > img {
+    width: 30px;
+    margin-top: auto;
+    margin-right: -10px;
+}
+
+.bubble {
+    --r: 1em;  /* the radius */
+    --t: 1.5em; /* the size of the tail */
+
+    max-width: 75%;
+    padding: 1em;
+    border-inline: var(--t) solid #0000;
+    border-radius: calc(var(--r) + var(--t))/var(--r);
+    mask:
+        radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) var(--_p) 100%/var(--t) var(--t) no-repeat,
+        linear-gradient(#000 0 0) padding-box;
+    color: #fff;
+}
+.left {
+    --_p: 0;
+    border-bottom-left-radius: 0 0;
+    place-self: start;
+    background-color: #adadae;
+}
+.right {
+    --_p: 100%;
+    border-bottom-right-radius: 0 0;
+    place-self: end;
+    background-color: #5e64ba;
 }
