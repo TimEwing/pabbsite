@@ -1,4 +1,8 @@
 
+body {
+    background: url("/assets/images/bomb.png") center left repeat;
+}
+
 @keyframes slideInFromTop {
     0% {
         transform: translateY(+200vh);
