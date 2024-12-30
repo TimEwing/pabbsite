@@ -1,4 +1,5 @@
 @import url("msg.css");
+@import url("bsod.css");
 
 :root {
     --msgbox-width: 800px;

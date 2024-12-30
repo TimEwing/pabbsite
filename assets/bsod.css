@@ -1,0 +1,41 @@
+.bsod-container {
+    background-color: #0078D7;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    padding: 48px;
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sad-face {
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.progress-section {
+    margin-bottom: 32px;
+}
+
+.progress-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.stop-code {
+    font-size: 16px;
+}
