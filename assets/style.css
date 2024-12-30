@@ -13,7 +13,7 @@
 }
 
 body {
-    background: url("/assets/images/bomb.png") center left repeat;
+    background: url("assets/images/bomb.png") center left repeat;
     margin: 10px;
 }
 
