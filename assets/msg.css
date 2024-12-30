@@ -1,0 +1,227 @@
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(+200vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#msgheader {
+    margin: auto;
+    margin-top: 10px;
+    max-width: var(--msgbox-width);
+    background: linear-gradient(to bottom, #e8e8e8, #d8d8d8);
+    padding: 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.back-button {
+    margin-left: 12px;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: #5b5b5b;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    transition: background-color 0.2s;
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.window-title {
+    flex: 1;
+    text-align: center;
+    color: #5b5b5b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.window-controls {
+    display: flex;
+    gap: 6px;
+    margin-right: 12px;
+}
+
+.window-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.2s;
+}
+
+.window-button:hover {
+    opacity: 0.8;
+}
+
+.close-button {
+    background-color: #ff5f57;
+}
+
+.close-button:hover::before,
+.close-button:hover::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 6px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.close-button:hover::before {
+    transform: rotate(45deg);
+}
+
+.close-button:hover::after {
+    transform: rotate(-45deg);
+}
+
+.minimize-button {
+    background-color: #febc2e;
+}
+
+.minimize-button:hover::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 6px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.maximize-button {
+    background-color: #28c840;
+}
+
+.maximize-button:hover::before,
+.maximize-button:hover::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.maximize-button:hover::before {
+    top: 3px;
+    left: 5px;
+    width: 2px;
+    height: 6px;
+}
+
+.maximize-button:hover::after {
+    top: 5px;
+    left: 3px;
+    width: 6px;
+    height: 2px;
+}
+
+#msgbox {
+    margin: auto;
+    padding: 1rem;
+    max-width: var(--msgbox-width);
+    min-height: 8rem;
+    max-height: 70vh;
+    background-color: var(--bg-color);
+    overflow-y: scroll;
+    scrollbar-color: var(--msg-color) rgba(0, 0, 0, 0);
+    z-index: 10;
+}
+
+.msg {
+    display: grid;
+    padding-bottom: 10px;
+    grid-template-columns: auto 1fr;
+    animation: 0.75s ease 0s 1 slideInFromTop;
+}
+
+.msg > img {
+    width: 30px;
+    margin-top: auto;
+    margin-right: -10px;
+}
+
+.bubble {
+    --r: 1em;  /* the radius */
+    --t: 1.5em; /* the size of the tail */
+
+    max-width: 75%;
+    padding: 1em;
+    border-inline: var(--t) solid #0000;
+    border-radius: calc(var(--r) + var(--t))/var(--r);
+    mask:
+        radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) var(--_p) 100%/var(--t) var(--t) no-repeat,
+        linear-gradient(#000 0 0) padding-box;
+    color: #fff;
+}
+.left {
+    --_p: 0;
+    border-bottom-left-radius: 0 0;
+    place-self: start;
+    background-color: darkgrey;
+}
+.right {
+    --_p: 100%;
+    border-bottom-right-radius: 0 0;
+    place-self: end;
+    background-color: var(--msg-color);
+}
+
+
+#msginput {
+    margin: auto;
+    max-width: var(--msgbox-width);
+    background-color: var(--bg-color);
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#msginput textarea {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 1em;
+    font-size: 1rem;
+    resize: none;
+    min-height: 2.5rem;
+    max-height: 150px;
+    background-color: #eeeeee;
+    color: #5b5b5b;
+}
+
+#msginput textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #333333;
+}
+
+#msginput button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--msg-color);
+    color: white;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+#msginput button:hover {
+    background-color: #a05555;
+}
+
+#msginput button:active {
+    background-color: #884848;
+}
