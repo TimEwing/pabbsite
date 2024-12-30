@@ -9,5 +9,6 @@
 body {
     margin: 0px;
     padding: 0px;
+    border: 0px;
     background: url("/assets/images/bomb.png") center left repeat;
 }
