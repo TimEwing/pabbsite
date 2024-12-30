@@ -21,6 +21,15 @@ body {
     margin: auto;
     max-width: var(--msgbox-width);
     background-color: #eeeeee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#msgheader > a {
+    color: #5b5b5b;
+    text-decoration: none;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 #msgbox {
