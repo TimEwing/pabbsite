@@ -1,8 +1,12 @@
 
-<h1 id="msgheader">
-    <a href="/"> ❰ </a>
-    # chat name
-</h1>
+<div id="msgheader">
+    <div class="window-controls">
+        <div class="window-button close-button"></div>
+        <div class="window-button minimize-button"></div>
+        <div class="window-button maximize-button"></div>
+    </div>
+    <div class="window-title">Chat Window</div>
+</div>
 
 <div id="msgbox">
     <div class="msg">
@@ -60,4 +64,12 @@
             Duis ut augue malesuada, commodo mauris sit amet, aliquet turpis. Mauris tincidunt facilisis ipsum in pulvinar. Maecenas efficitur libero ut mattis hendrerit. Cras quis orci et lacus feugiat lobortis. Proin sed augue vel tortor laoreet faucibus. Etiam ac molestie sapien, vitae tempus justo. Donec maximus sollicitudin placerat.
         </div>
     </div>
+</div>
+
+<div id="msginput">
+    <textarea
+        placeholder="Type a message..."
+        rows="1"
+        aria-label="Message input"></textarea>
+    <button type="button">Send</button>
 </div>

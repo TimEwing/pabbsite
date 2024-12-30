@@ -1,6 +1,8 @@
 
 :root {
     --msgbox-width: 800px;
+    --bg-color: #cbd3f1;
+    --msg-color: #ba5e5e;
 }
 
 @keyframes slideInFromTop {
@@ -13,32 +15,34 @@
 }
 
 body {
+    margin: 0px;
+    padding: 0px;
     background: url("/assets/images/bomb.png") center left repeat;
-    margin: 10px;
 }
 
 #msgheader {
     margin: auto;
+    margin-top: 10px;
     max-width: var(--msgbox-width);
     background-color: #eeeeee;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 1rem;
 }
 
 #msgheader > a {
-    color: #5b5b5b;
+    color: darkgrey;
     text-decoration: none;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    text-shadow: 2px 2px 2px black;
 }
 
 #msgbox {
     margin: auto;
+    padding: 1rem;
     max-width: var(--msgbox-width);
     min-height: 8rem;
-    max-height: 90vh;
-    background-color: #7f92b9;
+    max-height: 70vh;
+    background-color: var(--bg-color);
     overflow-y: scroll;
+    scrollbar-color: var(--msg-color) rgba(0, 0, 0, 0);
     z-index: 10;
 }
 
@@ -72,11 +76,58 @@ body {
     --_p: 0;
     border-bottom-left-radius: 0 0;
     place-self: start;
-    background-color: #adadae;
+    background-color: darkgrey;
 }
 .right {
     --_p: 100%;
     border-bottom-right-radius: 0 0;
     place-self: end;
-    background-color: #5e64ba;
+    background-color: var(--msg-color);
+}
+
+
+#msginput {
+    margin: auto;
+    max-width: var(--msgbox-width);
+    background-color: var(--bg-color);
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#msginput textarea {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 1em;
+    font-size: 1rem;
+    resize: none;
+    min-height: 2.5rem;
+    max-height: 150px;
+    background-color: #eeeeee;
+    color: #5b5b5b;
+}
+
+#msginput textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #333333;
+}
+
+#msginput button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--msg-color);
+    color: white;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+#msginput button:hover {
+    background-color: #a05555;
+}
+
+#msginput button:active {
+    background-color: #884848;
 }
