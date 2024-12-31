@@ -22,3 +22,4 @@ If you want a new path on the site, you'll need to:
 `probably have them fail`
 `go fuck yourself`
 
+You should also make the `content.html`, `custom.css`, and `custom.js` files into your new dir. They can be empty, they just need to exist.
