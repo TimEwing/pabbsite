@@ -52,6 +52,8 @@ function addReply(message) {
     `);
 }
 
+console.log($("#sendbutton"));
+
 // Add new message on send
 $("#sendbutton").click(function() {
     let msg = $("#msgtext").val();
