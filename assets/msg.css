@@ -140,7 +140,7 @@ body {
     border: 0px;
     max-width: var(--msgbox-width);
     min-height: 8rem;
-    max-height: 70vh;
+    max-height: calc(95vh - 10rem);
     background-color: var(--bg-color);
     overflow-y: scroll;
     scrollbar-color: var(--msg-color) rgba(0, 0, 0, 0);
