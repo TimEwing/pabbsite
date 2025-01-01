@@ -1,6 +1,6 @@
 
 :root {
-    --msgbox-width: 800px;
+    --msgbox-width: 90vh;
     --bg-color: #eeeeee;
     --msg-color: #ba5e5e;
 }
