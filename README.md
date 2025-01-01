@@ -23,3 +23,11 @@ If you want a new path on the site, you'll need to:
 `go fuck yourself`
 
 You should also make the `content.html`, `custom.css`, and `custom.js` files into your new dir. They can be empty, they just need to exist.
+
+## Cursed Calendar bullshit
+TL;DR: Google calendars have restrictive CORS headers, but google sheets don't. I used a google app script to get around it.
+
+The app script lives here: https://script.google.com/u/1/home/projects/1To5q8m8r9pbT0tV9xzc35AnHMj034iSGVqLccSU4F30bnmnp5FCm3D4J
+And the google sheet is here: https://docs.google.com/spreadsheets/d/17Xt_vvbrcIPI0OprDVvFlaGsUkCsuq7dgK60tbH6AsM
+
+The app script triggers every time the calendar updates, which plops the event time, name, and description in the google sheet.

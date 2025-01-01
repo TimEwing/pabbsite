@@ -130,6 +130,7 @@ body {
 }
 
 #msgbox {
+    font-family: "BetterSans", sans-serif;
     margin: auto;
     padding: 1rem;
     border: 0px;
@@ -227,4 +228,8 @@ body {
 
 #msginput button:active {
     background-color: #884848;
+}
+
+.msgimg {
+    width: calc(var(--msgbox-width) / 2);
 }
