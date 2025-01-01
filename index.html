@@ -1,11 +1,14 @@
 <!-- Boilerplate html file - you shouldn't need to edit this, but every path needs one -->
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
         // Load header
         $(function(){
-            $("head").load("/boilerplate/head.html");
+            $.get("/boilerplate/head.html", function(data) {
+                $("head").append(data);
+            });
         });
     </script>
     <!-- Anything after the jquery load will be overwritten by the load() call -->
