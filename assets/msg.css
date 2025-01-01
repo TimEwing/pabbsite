@@ -1,6 +1,6 @@
 
 body {
-    background: url("/assets/images/bomb.png") center left repeat;
+    background: url("/assets/images/xp.jpg");
 }
 
 @keyframes slideInFromTop {
@@ -203,7 +203,7 @@ body {
     resize: none;
     min-height: 2.5rem;
     max-height: 150px;
-    background-color: #eeeeee;
+    background-color: #ffffff;
     color: #5b5b5b;
 }
 
