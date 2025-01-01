@@ -55,7 +55,7 @@ function addReply(message) {
 
 
 $(document).ready(function() {
-
+    // Load messages
     $.ajax({
         url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR07lQ71sFym0zbIsg1YXCerMecfRO9lNxmeQpJ6AtPR6ZyLBjntlCoKn0LRBGGDL-4FxqreyTZm6D3/pub?output=tsv",
         dataType: "text",
@@ -93,5 +93,15 @@ $(document).ready(function() {
                 replyIndex = (replyIndex + 1) % cannedResponses.length;
             });
         },
+    });
+
+    // Add new message on send
+    $("#msginput > button").click(function() {
+        let msg = $("#msginput > textarea").val();
+        console.log(msg);
+        if(msg.length > 0) {
+            addReply(msg);
+            $("#msginput > textarea").val("");
+        }
     });
 });
