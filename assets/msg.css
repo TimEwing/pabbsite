@@ -235,5 +235,5 @@ body {
 }
 
 .msgimg {
-    width: calc(var(--msgbox-width) / 2);
+    width: min(calc(var(--msgbox-width) / 2), 300px);
 }
