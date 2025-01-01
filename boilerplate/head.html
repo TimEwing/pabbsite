@@ -5,10 +5,12 @@
     $(function(){
         $("#content").load("./content.html");
     });
+    $(document).ready(function() {
+        $.getScript("./custom.js");
+    });
 </script>
 
 <link rel="stylesheet" href="/assets/style.css">
 
 <link rel="stylesheet" href="./custom.css">
 
-<script src="./custom.js" type="module"></script>

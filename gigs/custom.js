@@ -52,56 +52,52 @@ function addReply(message) {
     `);
 }
 
+// Add new message on send
+$("#sendbutton").click(function() {
+    let msg = $("#msgtext").val();
+    console.log(msg);
+    if(msg.length > 0) {
+        addReply(msg);
+        $("#msgtext").val("");
+    }
+});
 
+// Load messages
+$.ajax({
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR07lQ71sFym0zbIsg1YXCerMecfRO9lNxmeQpJ6AtPR6ZyLBjntlCoKn0LRBGGDL-4FxqreyTZm6D3/pub?output=tsv",
+    dataType: "text",
+    success: function(data) {
+        const upcomingEvents = data.split(/\r?\n|\r/);
 
-$(document).ready(function() {
-    // Load messages
-    $.ajax({
-        url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR07lQ71sFym0zbIsg1YXCerMecfRO9lNxmeQpJ6AtPR6ZyLBjntlCoKn0LRBGGDL-4FxqreyTZm6D3/pub?output=tsv",
-        dataType: "text",
-        success: function(data) {
-            const upcomingEvents = data.split(/\r?\n|\r/);
-
-            if(data.length > 0) {
-                addMessage("Yo, check out these upcoming gigs:");
-            }
-
-            let replyIndex = Math.floor(Math.random() * cannedResponses.length);
-
-            upcomingEvents.forEach(event => {
-                const splitEvent = event.split("\t");
-                const datestr = splitEvent[0]
-                const date = (new Date(datestr))
-                const summary = splitEvent[1]
-                const description = splitEvent[2];
-                const location = splitEvent[3];
-                // only assign time if the date string has a : in it
-                const time = /:/.test(datestr) ? "at " + date.toLocaleTimeString([], {hour: "numeric", minute:"2-digit"}) : "";
-                // Wrap image links in an image tag so they look pretty
-                const descriptionWithImages = description.replace(/(https?:\/\/\S+)/g, '<br><img class="msgimg" src="$1"><br>');
-
-                addMessage(`
-                    <b> ${summary} </b>
-                    <br>
-                    ${date.toDateString()} ${time}
-                    ${location ? "<br>" + location : ""}
-                    ${descriptionWithImages ? "<br>" + descriptionWithImages : ""}
-                `);
-
-                // Add random replies
-                addReply(cannedResponses[replyIndex]);
-                replyIndex = (replyIndex + 1) % cannedResponses.length;
-            });
-        },
-    });
-
-    // Add new message on send
-    $("#msginput > button").click(function() {
-        let msg = $("#msginput > textarea").val();
-        console.log(msg);
-        if(msg.length > 0) {
-            addReply(msg);
-            $("#msginput > textarea").val("");
+        if(data.length > 0) {
+            addMessage("Yo, check out these upcoming gigs:");
         }
-    });
+
+        let replyIndex = Math.floor(Math.random() * cannedResponses.length);
+
+        upcomingEvents.forEach(event => {
+            const splitEvent = event.split("\t");
+            const datestr = splitEvent[0]
+            const date = (new Date(datestr))
+            const summary = splitEvent[1]
+            const description = splitEvent[2];
+            const location = splitEvent[3];
+            // only assign time if the date string has a : in it
+            const time = /:/.test(datestr) ? "at " + date.toLocaleTimeString([], {hour: "numeric", minute:"2-digit"}) : "";
+            // Wrap image links in an image tag so they look pretty
+            const descriptionWithImages = description.replace(/(https?:\/\/\S+)/g, '<br><img class="msgimg" src="$1"><br>');
+
+            addMessage(`
+                <b> ${summary} </b>
+                <br>
+                ${date.toDateString()} ${time}
+                ${location ? "<br>" + location : ""}
+                ${descriptionWithImages ? "<br>" + descriptionWithImages : ""}
+            `);
+
+            // Add random replies
+            addReply(cannedResponses[replyIndex]);
+            replyIndex = (replyIndex + 1) % cannedResponses.length;
+        });
+    },
 });
